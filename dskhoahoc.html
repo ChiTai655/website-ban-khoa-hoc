@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width-device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/54f0cb7e4a.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <title>Bán Khóa Học</title>
+    
+    <!-- <script>
+      $(document).ready(function(){
+        $('#icon-menu').click(function(){
+             $('nav').slideToggle();
+         }) ;
+     })
+     </script> -->
+    
+</head>
+      <header>
+        
+        <div class="navbar navbar-fixed-top">
+          <a href="https://www.facebook.com/"><img style="height: 50px;" src = "images/fb.png"> </a>
+            <a style="color:black;margin-left:230px;margin-top:20px " href="index.html"><b>Trang Chủ</b></a></li>
+            <a style="color:black;margin-top:20px" href="#"><b>Về Chúng Tôi</b></a>
+            <a style="color:black;margin-top:20px" href="#"><b>Khóa Học STEM </b></a>
+            <a style="color:black;margin-top:20px;color:#ec7f37;" href="#"><b>Khóa Học</b></a>
+            <a style="color:black;margin-top:20px" href="#"><b>Mentor</b></a>
+            <a style="color:black;margin-top:20px;margin-right:240px" href="#"><b>Blog</b></a>
+            <a href="#"><img style="height: 50px;" src ="images/icon-shopping-cart.jpg"> </a>
+          </div>
+        
+  </header>
+      <label for="nav-mobile-input">
+        <div id="icon-menu">
+          <a><i class="fas fa-bars"></i></a> 
+        </div>  
+      </label>
+      <input type="checkbox" hidden name="" class="nav-input" id="nav-mobile-input">
+      <label for="nav-mobile-input" class="nav_overlay"></label>
+  
+        <nav class="nav_mobile ">
+          <label for="nav-mobile-input" class="nav_mobile_close">
+            <i class="fas fa-times"></i>
+          </label>
+          <ul class="nav_mobile_list" >
+              <li><a class="nav_mobile_link" href="https://www.facebook.com/"><img style="height: 50px;" src = "images/fb.png"> </a></li>
+              <li><a class="nav_mobile_link" href="#"><img style="height: 50px;" src ="images/icon-shopping-cart.jpg"> </a></li>
+              <li><a style="color:black; margin-top: 15px;" href="#" class="nav_mobile_link" ><b>Trang Chủ</b></a></li>
+              <li><a style="color:black; margin-top: 15px;" href="#" class="nav_mobile_link" ><b>Về Chúng Tôi</b></a></li>
+              <li><a style="color:black; margin-top: 15px;" href="#" class="nav_mobile_link" ><b>Khóa Học STEM </b></a></li>
+              <li><a style="color:black; margin-top: 15px;" href="#" class="nav_mobile_link" ><span><b>Khóa Học</b></span></a></li>
+              <li><a style="color:black; margin-top: 15px;" href="#" class="nav_mobile_link" ><b>Mentor</b></a></li>
+              <li><a style="color:black; margin-top: 15px;" href="#" class="nav_mobile_link" ><b>Blog</b></a></li>
+              
+              <li>
+              <div class="search-kh">
+                <div class="input-group">
+                  <input type="text" class="form-control" placeholder="Tìm kiếm khóa học" name="search">
+                  <div class="input-group-btn">
+                    <button class="btn btn-default" type="submit">
+                      <i class="glyphicon glyphicon-search"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </nav>
+      
+
+ 
+    <body>
+      <script src="./xuly.js"></script>
+          <div class="containerr">
+            <img class="img-banner" src="images/banner-2.jpg">
+            <br><br><b><h3 class="chu1" style=" color: #EC4D37;"> Danh Sách Khóa Học</h3></b>
+            <p class="chu"><a href="#" style="color:white;text-align: center;"> Trang Chủ  > </a> <a href ="#" style="color:white">Khóa Học</a></p>
+          </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-4" ><b>KHOẢNG GIÁ</b>
+                    <form name ="khoanggia">
+                        <div class="form-group">
+                          <label for="tugia">Từ giá</label>
+                          <input  type="text" class="form-control" id="tugia" placeholder="0 VNĐ" oninput="dinhdangtienteVND(this);rangbuocgiatien() " onkeypress="return chinhapso(event)" onkeydown="tudongxoa(event)" >
+                        </div>
+                        <div class="form-group">
+                          <label for="dengia">Đến giá</label>
+                          <input  type="text" class="form-control" id="dengia" placeholder="10.000.000 VNĐ" oninput="dinhdangtienteVND(this);rangbuocgiatien() " onkeypress="return chinhapso(event)" onkeydown="tudongxoa(event)" >
+                        </div>
+                        <h4 style="color:red;font-size:15px" id="thongbao"></h4>
+                      </form>
+                      <div class="checkbox">
+                        <p><b>HÌNH THỨC HỌC</b></p>
+                        <label><input type="checkbox">Online</label><br>
+                        <label><input type="checkbox">Offline</label>
+                      </div>
+                      <div class="checkbox">
+                        <p><b>TRÌNH ĐỘ</b></p>
+                        <label><input type="checkbox">Dễ</label> <img src="images/icon-title-course.png" style="height: 40px; float:right"><br><br>
+                        <label><input type="checkbox">Trung Bình</label><img src="images/icon-title-course-2.png" style="height: 40px; float:right"><br><br>
+                        <label><input type="checkbox">Khó</label><img src="images/icon-title-course-3.png" style="height: 40px; float:right"><br><br>
+                        <label><input type="checkbox">Cực Khó</label><img src="images/icon-title-course-4.png" style="height: 40px; float:right"><br><br>
+                      </div>
+                      <div class="checkbox">
+                        <p><b>LĨNH VỰC</b></p>
+                        <label><input type="checkbox">Back-End</label><br>
+                        <label><input type="checkbox">Front-End</label><br>
+                        <label><input type="checkbox">Database</label><br>
+                        <label><input type="checkbox">Cấp tốc</label><br>
+                        <label><input type="checkbox">Other</label><br>
+                        <label><input type="checkbox">STEM</label><br>
+                        <p><button onclick="timkiemtheogia()" type="timkiem" >Tìm Kiếm</button></p>
+                      </div>
+                      
+                </div>
+                  <div class="col-sm-8" >
+                    <div class="row">
+                      <div class="col-sm-4"><br>
+                        <b id="khoahoc" ></b>
+                      </div>  
+                      <div class="col-sm-8">
+                        <select style="width: 300px;margin-top: 18px;margin-bottom:20px;float:right" class="form-control" id="sel1">
+                          <option>Sắp xếp khóa học</option>
+                          <option>2</option>
+                          <option>3</option>
+                          <option>4</option>
+                        </select>
+                      </div>
+                    </div>
+                      
+
+                  <div class="row">
+                    <div class="col-sm-4" >
+                        <div class="card">
+                            <center><img src="images/net-core-api1.png" alt="Denim Jeans" style="width: 200px;text-align:center"><br><br></center>
+                            <img class="img" src="images/avatar-mentor-1.jpg" style="height: 60px; float:left">
+                            <img src="images/icon-title-course-4.png" style="height: 40px; float:right;"><br><br><br>
+                            <p style="font-size: 20px;margin-top:10px;margin-bottom: 17px;" ><b>.NET Core API </b></p>
+                            <p class="price">Mentor <span>Trần Hòa Hiệp</span></p>
+                            <p><img style="height: 30px;" src="images/user.png"><b>104 học viên </b></p>
+                            <p>ASP.NET Core là mô hình lập trình mới có thể triển khai trên đám mây và có mục đích sử dụng chạy nhiều nền tảng như: MacOs, Linux và Windows. Nó hỗ trợ được ASP.NET MVC, ASP.NET Core Web API...</p>
+                            <i class="fas fa-star fa-spin" style="color: #eb661e;"></i>
+                            <i class="fas fa-star fa-spin" style="color: #eb661e;"></i>
+                            <i class="fas fa-star fa-spin" style="color: #eb661e;"></i>
+                            <i class="fas fa-star fa-spin" style="color: #eb661e;"></i>
+                            <i class="fas fa-star fa-spin" style="color: #eb661e;"></i>
+                            <table>
+                              <tr>
+                                <td>
+                                  <b><p style="font-size: 15px;color:red;margin-top:9px" >3,000,000 VND </p></b>
+                                </td>
+                                <td>
+                                  &emsp;<i class="fas fa-calendar"></i><b><i>15 buổi học</i></b>
+                                </td>
+                              </tr>
+                            </table>
+                             
+                            <p><button>XEM CHI TIẾT</button></p>
+                          </div>
+                    </div>
+                    <div class="col-sm-4"> 
+                        <div class="card">
+                           <center><img src="images/tester.jpg" alt="Denim Jeans" style="width: 150px;text-align:center"><br></center> 
+                            <img class="img" src="images/avatar-mentor-2.jpg" style="height: 60px; float:left">
+                            <img src="images/icon-title-course-2.png" style="height: 40px; float:right"><br><br>
+                            <p style="font-size: 20px;margin-top:10px" ><b>Nhập Môn Kiểm Thử Phần Mềm </b></p>
+                            <p class="price">Mentor <span>Tô Lý Hữu Nhân</span></p>
+                            <p><img style="height: 30px;" src="images/user.png"><b>22 học viên </b></p>
+                            <p>Testing, hay còn gọi là kiểm thử phần mềm, là một công việc vô cùng quan trọng trong chu kỳ phát triển phần mềm. Theo anh Thành chia sẻ, Testing là một công việc thú vị, mang lại nhiều giá trị ...</p>
+                            <i class="fas fa-star fa-spin" style="color: #eb661e;"></i>
+                            <i class="fas fa-star fa-spin" style="color: #eb661e;"></i>
+                            <i class="fas fa-star fa-spin" style="color: #eb661e;"></i>
+                            <i class="fas fa-star fa-spin" style="color: #eb661e;"></i>
+                            <i class="fas fa-star-half-alt fa-spin" style="color: #eb661e;" ></i>
+                            <table>
+                              <tr>
+                                <td>
+                                  <b><p style="font-size: 15px;color:red;margin-top:9px" >2,500,000 VND </p></b>
+                                </td>
+                                <td>
+                                  &emsp; <i class="fas fa-calendar"></i><b><i>12 buổi học</i></b>
+                                </td>
+                              </tr>
+                            </table>
+                            
+                            <p><button>XEM CHI TIẾT</button></p>
+                          </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="card">
+                            <center><img src="images/dotnet-basic-logo.png" alt="Denim Jeans" style="width: 90px;"><br></center> 
+                            <img class="img" src="images/avatar-mentor-3.jpg" style="height: 60px; float:left">
+                            <img src="images/icon-title-course-2.png" style="height: 40px; float:right"><br><br><br>
+                            <p style="font-size: 20px;margin-top:10px;margin-bottom: 12px;" ><b>Windows Form </b></p>
+                            <p class="price">Mentor <span>Phan Nhật Tân</span></p>
+                            <p><img style="height: 30px;" src="images/user.png"><b>0 học viên </b></p>
+                            <p>Winform hay còn gọi là Windows form  là giải pháp chạy trên nền Windows. Winform là công nghệ của Microsoft, cho phép lập trình các ứng dụng Windows trên PC. Winform là thuật ngữ mô tả một ứng dụng được viết dùng .NET...</p>
+                            <i class="far fa-star fa-spin" style="color: #eb661e;"></i>
+                            <i class="far fa-star fa-spin" style="color: #eb661e;"></i>
+                            <i class="far fa-star fa-spin" style="color: #eb661e;"></i>
+                            <i class="far fa-star fa-spin" style="color: #eb661e;"></i>
+                            <i class="far fa-star fa-spin" style="color: #eb661e;"></i>
+                            <table>
+                              <tr>
+                                <td>
+                                  <b><p style="font-size: 15px;color:red;margin-top:9px" >3,000,000 VND </p></b>
+                                </td>
+                                <td>
+                                  &emsp; <i class="fas fa-calendar"></i><b><i>15 buổi học</i></b>
+                                </td>
+                              </tr>
+                            </table>
+                            <p><button>XEM CHI TIẾT</button></p>
+                          </div>
+                    </div>
+                  </div>
+
+                  <div style="margin-top: 20px;" class="row">
+                    <div class="col-sm-4">
+                        <div class="card">
+                            <center><img src="images/C++.png" alt="Denim Jeans" style="width: 90px;"><br></center>
+                            <img class="img" src="images/avatar-mentor-4.jpg" style="height: 60px; float:left">
+                            <img src="images/icon-title-course.png" style="height: 40px; float:right"><br><br><br>
+                            <p style="font-size: 20px;margin-top:10px;margin-bottom: 12px;" ><b>C Basic </b></p>
+                            <p class="price">Mentor <span>Nguyễn Viết Châu</span></p>
+                            <p><img style="height: 30px;" src="images/user.png"><b>30 học viên </b></p>
+                            <p>Ngôn ngữ lập trình C++ là một ngôn ngữ lập trình hướng đối tượng(OOP – Object-oriented programming) được phát triển bởi Bjarne Stroustrup. C++ là ngôn ngữ lập trình được phát triển trên nên tảng của ngôn ngữ lập trình...</p>
+                            <i class="fas fa-star fa-spin" style="color: #eb661e;"></i>
+                            <i class="fas fa-star fa-spin" style="color: #eb661e;"></i>
+                            <i class="fas fa-star fa-spin" style="color: #eb661e;"></i>
+                            <i class="fas fa-star fa-spin" style="color: #eb661e;"></i>
+                            <i class="fas fa-star fa-spin" style="color: #eb661e;"></i>
+                            <table>
+                              <tr>
+                                <td>
+                                  <b><p style="font-size: 15px;color:red;margin-top:9px" >3,600,000 VND </p></b>
+                                </td>
+                                <td>
+                                  &emsp; <i class="fas fa-calendar"></i><b><i>18 buổi học</i></b>
+                                </td>
+                              </tr>
+                            </table>
+                            <p><button>XEM CHI TIẾT</button></p>
+                          </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="card">
+                            <center><img src="images/html-va-css.jpg" alt="Denim Jeans" style="width: 180px;"><br></center>
+                            <img class="img" src="images/avatar-mentor-5.png" style="height: 60px; float:left">
+                            <img src="images/icon-title-course.png" style="height: 40px; float:right"><br><br><br>
+                            <p style="font-size: 20px;margin-top:10px;margin-bottom: 12px;" ><b>HTML & CSS Basic</b></p>
+                            <p class="price">Mentor <span>Đoàn Ngọc Trân Châu</span></p>
+                            <p><img style="height: 30px;" src="images/user.png"><b>12 học viên </b></p>
+                            <p>HTML (HyperText Markup Language) : là một ngôn ngữ đánh dấu được thiết kế ra để tạo nên các trang web, nghĩa là các mẩu thông tin được trình bày trên World Wide Web. CSS (Cascading Style Sheets) :....</p>
+                            <i class="fas fa-star fa-spin" style="color: #eb661e;"></i>
+                            <i class="fas fa-star fa-spin" style="color: #eb661e;"></i>
+                            <i class="fas fa-star fa-spin" style="color: #eb661e;"></i>
+                            <i class="fas fa-star fa-spin" style="color: #eb661e;"></i>
+                            <i class="fas fa-star fa-spin" style="color: #eb661e;"></i>
+                            <table>
+                              <tr>
+                                <td>
+                                  <b><p style="font-size: 15px;color:red;margin-top:9px" >3,000,000 VND </p></b>
+                                </td>
+                                <td>
+                                  &emsp; <i class="fas fa-calendar"></i><b><i>18 buổi học</i></b>
+                                </td>
+                              </tr>
+                            </table>
+                            <p><button>XEM CHI TIẾT</button></p>
+                          </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="card">
+                            <center><img src="images/java.png" alt="Denim Jeans" style="width: 180px;"><br></center>
+                            <img class="img" src="images/avatar-mentor-6.png" style="height: 60px; float:left">
+                            <img src="images/icon-title-course-2.png" style="height: 40px; float:right"><br><br><br>
+                            <p style="font-size: 20px;margin-top:10px;margin-bottom: 12px;" ><b>Java Basic </b></p>
+                            <p class="price">Mentor <span>Phan Nhật Tân</span></p>
+                            <p><img style="height: 30px;" src="images/user.png"><b>26 học viên </b></p>
+                            <p>Java là một ngôn ngữ lập trình được sử dụng rộng rãi để viết mã cho các ứng dụng web. Ngôn ngữ này là lựa chọn phổ biến của các nhà phát triển trong hơn 2 thập niên. Hiện nay có hàng triệu ứng dụng Java đang được sử dụng...</p>
+                            <i class="fas fa-star fa-spin" style="color: #eb661e;"></i>
+                            <i class="fas fa-star fa-spin" style="color: #eb661e;"></i>
+                            <i class="fas fa-star fa-spin" style="color: #eb661e;"></i>
+                            <i class="fas fa-star fa-spin" style="color: #eb661e;"></i>
+                            <i class="fas fa-star fa-spin" style="color: #eb661e;"></i>
+                            <table>
+                              <tr>
+                                <td>
+                                  <b><p style="font-size: 15px;color:red;margin-top:9px" >2,500,000 VND </p></b>
+                                </td>
+                                <td>
+                                  &emsp; <i class="fas fa-calendar"></i><b><i>15 buổi học</i></b>
+                                </td>
+                              </tr>
+                            </table>
+                            <p><button>XEM CHI TIẾT</button></p>
+                          </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div  style="text-align: center; ">
+                      <ul  class="pagination">
+                          <li><a style="background-color: #eb661e;color:white;border-radius:30px" href="#">1</a></li>
+                          <li><a style="color: black;" href="#">2</a></li>
+                          <li><a style="color: black;" href="#">3</a></li>
+                          <li><a style="color: black;" href="#">4</a></li>
+                          <li><a style="color: black;border-radius:30px" href="#">></a></li>
+                        </ul>
+                  </div>
+                  </div>
+                  
+
+                </div>
+
+            </div>
+        </div>
+           
+        
+    
+    </body>
+
+    <footer style="background-color: rgb(11, 16, 61); color:white" >
+       
+            <div style="margin-top: 20px;margin-left: 25px;width: 700px fit-content"  class="row">
+              <div class="col-sm-3">
+                <img src="images/fb.png" style="height: 50px;"><br>
+                  <p style="margin-top: 10px;">Chúng tôi cung cấp các khóa học chất lượng cao để cải thiện các kỹ năng lập trình của bạn. Tất cả các mentor của chúng tôi đềucó kinh nghiệm thực tế và giảng dạy</p>
+                  <p><b>Theo dỗi chúng tôi tại</b><p>
+                  <b style="color: white; font: size 20px;"><a href="#"><i class="fab fa-facebook"></i></a> <a href="#"><i class="fab fa-instagram-square"></i></a> <a hre="#"><i class="fab fa-youtube"></i></a></b>
+              </div>
+              <div class="col-sm-3">
+                <b><span style="margin-bottom: 5px;">Menu</span></b><br>
+                <p><a  href =#>Trang Chủ</a></p>
+                <p><a href =#>Về chúng tôi</a></p>
+                <p><a href =#>Nền tảng LMS</a></p>
+                <p><a href =#>Khóa học STEM</a></p>
+                <P><a href =#>Khóa học</a></P>
+                <p><a href =#>Mentor</a></p>
+                <p><a href =#>Blog</a></p>
+              </div>
+              <div class="col-sm-3">
+                <b><span>Điều khoản</span></b><br>
+                <p><a href =#>Chính sách bảo mật</a></p>
+                <p><a href =#>Điều khoảng dịch vụ</a></p><br>
+                <b><p><a href =#><span>Cộng tác viên</span></a></p></b><br>
+                <p><a href =#>Đăng ký cộng tác viên</a></p>
+                <p><a href =#>Đăng ky Mentor</a></p>
+              </div>
+              <div class="col-sm-3">
+                <b><span>Liên hệ với chúng tôi</span></b><br>
+                <p><img src="images/icon-location.png" style="height: 30px;">Ben Luc, Long An</p>
+                <p><img src="images/icon-gmail.png" style="height: 30px;">chitaisad123@gmail.com</p>
+                <p><img src="images/icon-phone.png" style="height: 30px;">0933108601</p>
+              </div>
+            </div>
+        
+        <div style="text-align: center;border-top: 1px solid gray;">
+            <p style="margin-top:20px">No copyRight designer By chitaisad123@gmail.com</p>
+        </div>
+    </footer>
